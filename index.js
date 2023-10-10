@@ -20,7 +20,7 @@ console.log("Mongo is Connected");
 //connect end
 
 app.get("/", function (request, response) {
-  response.send("🙋‍♂️, 🌏 🎊✨🤩");
+  response.send("🙋‍♂️, 🌏 🎊✨🤩 /mobiles");
 });
 
 // http://localhost:4003/mobiles
