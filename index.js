@@ -1,18 +1,22 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 import cors from "cors";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 // const express = require("express");
 const app = express();
 
-const PORT = 4003;
+const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 //connect pandrom
-const MONGO_URL = "mongodb+srv://sethu:sethu123@cluster0.czryasc.mongodb.net";
-// mongodb+srv://sethu:<password>@cluster0.czryasc.mongodb.net/?retryWrites=true&w=majority
+const MONGO_URL = process.env.MONGO_URL;
 export const client = new MongoClient(MONGO_URL);
+console.log(process.env);
+console.log(process.env.MONGO_URL);
 await client.connect();
+
 console.log("Mongo is Connected");
 //connect end
 
